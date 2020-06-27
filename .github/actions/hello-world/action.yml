@@ -1,14 +1,22 @@
-# name: JS Actions
+name: "my hello action"
 
-# on: [push]
+description: "say hello with actions"
 
-# jobs:
-#   action:
+runs:
+  using: "node12"
+  main: "main.js"
 
-#     runs-on: ubuntu-latest
+inputs:
+  first-greeting:
+    description: "who would you like to greet in the console"
+    required: true
+    default: "Hubot"
 
-#     steps:
-#     - uses: actions/checkout@v1
+  second-greeting:
+    description: "another person to greet"
+    required: true
+    default: "Mona the Octocat"
 
-#     - name: hello-action
-#       uses: ./.github/actions/hello-world
+  third-greeting:
+    description: "a third greeting"
+    required: false
